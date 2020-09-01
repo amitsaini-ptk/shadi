@@ -1,0 +1,1 @@
+web: gunicorn shadi.wsgi --log-file -
