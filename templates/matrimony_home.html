@@ -1,0 +1,52 @@
+<head>
+<style>
+img {
+  border-radius: 50%;
+}
+</style>
+
+</head>
+
+{% extends 'base.html' %}
+
+{% block title %} <title>Matromony Home </title>{% endblock %}
+
+
+{% block body %} 
+
+{% include 'navbar_matrimony.html' %}
+
+<h2>SAINI Matrimonial Profiles </h2>
+
+<div class="container">
+
+	<div class="row">
+
+		{% for i in prof %}
+
+		<div class="col-3">
+		<div class="card">
+        <img src="/media/{{i.pic}}" class="card-img-top" alt="Profile_pic" width=200 height=200>
+			  <div class="card-body">
+			    <h5 class="card-title"> {{ i.name }}, {{ i.age}} </h5>
+			    <h6 class="card-title">{{ i.education}}</h6>
+			    <h6 class="card-title">{{ i.job }}</h6>
+			    <h6 class="card-title">{{ i.city }}, {{ i.state }} </h6>
+			    <p class="card-text">{{ i.about }}</p>
+			    <a href="/matrimony/{{ i.slug }}" class="btn btn-primary">Visit Profile</a>
+			  </div>
+			</div>
+
+
+		</div>
+
+		{% endfor %}
+
+	</div>
+
+</div>
+
+
+
+{% endblock %}
+
